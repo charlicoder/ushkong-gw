@@ -17,7 +17,7 @@ services:
         paths:
           - /uauth
         strip_path: true
-        preserve_host: true
+        preserve_host: false
         protocols:
           - http
           - https
