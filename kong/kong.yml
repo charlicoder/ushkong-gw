@@ -3,11 +3,11 @@ _transform: true
 
 services:
   # ============================================================
-  # USHAUTH - Django API
+  # USHAUTH
   # ============================================================
+
   - name: ushauth
     url: http://ushauth:8002
-
     connect_timeout: 5000
     write_timeout: 10000
     read_timeout: 10000
@@ -25,6 +25,7 @@ services:
   # ============================================================
   # USHBOOKNPAY
   # ============================================================
+
   - name: ushbooknpay
     url: http://ushbooknpay:8003
     connect_timeout: 5000
@@ -44,8 +45,9 @@ services:
   # ============================================================
   # USHNOTICE
   # ============================================================
+
   - name: ushnotice
-    url: http://ushnotice:8004
+    url: http://ushnotice:8000
     connect_timeout: 5000
     write_timeout: 10000
     read_timeout: 10000
@@ -54,15 +56,16 @@ services:
       - name: ushnotice-route
         paths:
           - /unotice
-        strip_path: false
+        strip_path: true
         preserve_host: true
         protocols:
           - http
           - https
 
   # ============================================================
-  # USHANR - Accounting & Reporting API
+  # USHANR
   # ============================================================
+
   - name: ushanr
     url: http://ushanr:8007
     connect_timeout: 5000
