@@ -6,9 +6,7 @@ services:
   # USHAUTH - Django API
   # ============================================================
   - name: ushauth
-    host: host.docker.internal
-    port: 8002
-    protocol: http
+    url: http://ushauth:8002
 
     connect_timeout: 5000
     write_timeout: 10000
@@ -19,6 +17,7 @@ services:
         paths:
           - /uauth
         strip_path: true
+        preserve_host: true
         protocols:
           - http
           - https
@@ -27,9 +26,7 @@ services:
   # USHBOOKNPAY
   # ============================================================
   - name: ushbooknpay
-    host: host.docker.internal
-    port: 8003
-    protocol: http
+    url: http://ushbooknpay:8003
     connect_timeout: 5000
     write_timeout: 10000
     read_timeout: 10000
@@ -39,6 +36,7 @@ services:
         paths:
           - /booknpay
         strip_path: true
+        preserve_host: true
         protocols:
           - http
           - https
@@ -47,9 +45,7 @@ services:
   # USHNOTICE
   # ============================================================
   - name: ushnotice
-    host: host.docker.internal
-    port: 8000
-    protocol: http
+    url: http://ushnotice:8004
     connect_timeout: 5000
     write_timeout: 10000
     read_timeout: 10000
@@ -59,6 +55,7 @@ services:
         paths:
           - /unotice
         strip_path: false
+        preserve_host: true
         protocols:
           - http
           - https
@@ -67,9 +64,7 @@ services:
   # USHANR - Accounting & Reporting API
   # ============================================================
   - name: ushanr
-    host: host.docker.internal
-    port: 8007
-    protocol: http
+    url: http://ushanr:8007
     connect_timeout: 5000
     write_timeout: 10000
     read_timeout: 10000
@@ -79,6 +74,7 @@ services:
         paths:
           - /uanr
         strip_path: true
+        preserve_host: true
         protocols:
           - http
           - https
