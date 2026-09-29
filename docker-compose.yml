@@ -35,10 +35,10 @@ services:
       - ./kong/kong.yml:/etc/kong/kong.yml:ro
 
     networks:
-      - ushspa
+      - ushspa-network
 
 networks:
-  ushspa:
-    name: ushspa-network
-    driver: bridge
+  ushspa-network:
+    external: true
+    
     
